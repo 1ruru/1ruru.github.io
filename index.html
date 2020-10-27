@@ -1,4 +1,15 @@
 <html>
+ <head>
+   <!-- manifest.jsonを呼び出しています -->
+  <link rel="manifest" href="./manifest.json">
+  <script>
+    // service workerが有効なら、service-worker.js を登録します
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js').then(function() { console.log('Service Worker Registered'); });
+   }
+  </script>
+  <title>Hello PWA.</title>
+ </head>
  <body>
    <div id="app">
      <p>{{msg}}</p>
@@ -22,4 +33,4 @@
      })
    </script>
  </body>
- </html>
+</html>
